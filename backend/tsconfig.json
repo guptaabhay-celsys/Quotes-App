@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "typeRoots": ["./node_modules/@types", "./types"],
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./src", 
+    "paths": {
+      "*": ["../node_modules/*"], 
+      "@types/*": ["types/*"]
+    },
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/types/**/*.d.ts",
+// , "src/auth/jwtMiddleware.js" 
+],
+  "exclude": ["node_modules", "dist"]
+}
