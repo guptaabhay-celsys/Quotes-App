@@ -13,7 +13,10 @@ import cors from 'cors';
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: "https://rainbow-sopapillas-720002.netlify.app/",
+  credentials: true,
+}));
 const JWT_SECRET = '12345';
 
 const resolver = mergeResolvers([quoteResolvers, userResolvers]);
@@ -26,10 +29,6 @@ const startServer = async () => {
         const server = new ApolloServer({
             typeDefs, 
             resolvers: resolver,
-            cors: {
-              origin: "*",
-              credentials: true,
-            },
             context: ({req}) => {
               const { authorization } = req.headers;
               if(authorization){

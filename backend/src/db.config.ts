@@ -4,11 +4,12 @@ import { DataSource } from 'typeorm';
 
 export const AppDataSource = new DataSource({
   type: "postgres",
-  host: "localhost",
+  host: "ep-fragrant-paper-a8oqda2w-pooler.eastus2.azure.neon.tech",
   port: 5432,
-  username: "postgres",
-  password: "Cel12345",
-  database: 'Quotesdb',
+  username: "neondb_owner",
+  password: "npg_C0x3psgncmdi",
+  database: 'neondb',
   entities: [Users, Quotes],
   synchronize: true,
+  ssl: { rejectUnauthorized: false }
 });
